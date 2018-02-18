@@ -209,22 +209,16 @@ int					main()
 {
 	string stl_file_name;
 	point start, end;
-//	cout << "Enter .stl file name(ex. ../sources/1.stl)\n";			//input from console
-//	cin >> stl_file_name;
-//	cout << "Enter coordinates of source point(ex. -17 -15 0)\n";
-//	cin >> start[0] >> start[1] >> start[2];
-//	cout << "Enter coordinates of target point(ex. -6.999 -25 10.001)\n";
-//	cin >> end[0] >> end[1] >> end[2];
-//	cout << "Calculating...\n";
-
-	start = {-17, -15, 0};					//fast in code input
-	end = {-6.999, -25, 10.001};
+	
 	stl_file_name = "../sources/1.stl";
+	start = {-17, -15, 0};
+	end = {-6.999, -25, 10.001};
 	if (start == end)
 	{
 		cout << "Target point == source point!";
 		return (1);
 	}
+	
 	auto all_points = parse(stl_file_name);		//reading of file, triangles points record
 	auto vectors = into_vectors(all_points, start, end);	//finding and recording of all vectors
 	auto path = path_value(vectors);			//finding Dijkstra the shortest path
