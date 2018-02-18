@@ -219,12 +219,12 @@ int					main()
 		return (1);
 	}
 	
-	auto all_points = parse(stl_file_name);		//reading of file, triangles points record
+	auto all_points = parse(stl_file_name);			//reading of file, triangles points record
 	auto vectors = into_vectors(all_points, start, end);	//finding and recording of all vectors
-	auto path = path_value(vectors);			//finding Dijkstra the shortest path
+	auto path = path_value(vectors);			//finding Dijkstra shortest path
 
 	cout << "Path in points\n";
-	for (int i = 0; i<path.size(); i++)		//paths output
+	for (int i = 0; i<path.size(); i++)			//paths output
 		cout << path[i].x << " " << path[i].y << " " << path[i].z << endl;
 	return (0);
 }
